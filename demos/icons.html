@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head> 
+        <meta charset="utf-8" />
+        
+        <title>Secrets of the Browser Developer Tools - Demos</title>
+
+        <!-- chrome frame support -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <!-- DNS prefetch -->
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//themes.googleusercontent.com" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        
+        <!-- fix orientation bugs -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="shortcut icon" href="favicon.ico" />
+
+        <!-- search meta tags -->
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+
+        <!-- open graph meta tags -->
+        <meta property="og:title" content="Secrets of the Browser Developer Tools" />
+        <meta property="og:type" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:description" content="" />
+
+        <!-- styles -->
+        <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic|Source+Code+Pro:300" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/styles.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Modernizr - all other JS are loaded at bottom of page -->
+        <!--script src="/js/modernizr.min.js"></script -->
+
+    </head>
+    <body>
+
+        <div class="site-wrapper">
+            <style type="text/css">
+.site-wrapper {
+    background: #fff;
+}
+
+.tick {
+    background-color: #fff;
+    border-radius: 20px;
+    /*box-shadow: 0 0 5px #333*/;
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+    width: 300px;
+}
+.tick:after {
+    color: rgba(0, 0, 0, 0.1);
+    font-size: 3em;
+    content: "\e028";
+    font-family: 'icomoon';
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    speak: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: -1;
+}
+
+.highlight {
+    border-radius: 30px 30px;
+    box-shadow: inset 0 180px 0 0 rgba(255,255,255,.2);
+    position: absolute;
+    height: 300px;
+    top: -30px;
+    width: 300px;
+}
+
+.meta {
+    line-height: 1;
+}
+
+.type-logging,
+.type-inspecting {
+    font-size: 12em;
+}
+
+.type-logging,
+.type-inspecting,
+.type-performance,
+.type-debugging {
+    position: absolute;
+    bottom: 0;
+}
+.type-debugging {
+    bottom: 175px;
+    font-size: 3em;
+    left: 128px;
+}
+.type-performance:before {
+    color: #fff;
+}
+
+.type-performance {
+    bottom: 70px;
+    font-size: 5em;
+    left: 50px;
+}
+
+.type-inspecting {
+    bottom: 70px;
+    left: 80px;
+    text-shadow: -10px 12px 0 #fff, 10px -12px 0 #fff, 20px -22px 0 #fff, 30px -32px 0 #fff, 40px -42px 0 #fff, 50px -52px 0 #fff;
+}
+
+</style>
+
+<div class="tick">
+    <div class="meta type-logging"></div>
+    <div class="meta type-performance"></div>
+    <div class="meta type-inspecting"></div>
+    <div class="meta type-debugging"></div>
+</div>
+        </div>
+
+        <!-- &copy; 2013 Andi Smith -->
+
+        <!-- scripts -->
+        <script src="assets/js/lib/jquery-1.10.1.min.js"></script>
+        <script src="assets/js/common.min.js"></script>
+
+        <!-- Google Analytics -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-534640-11', 'devtoolsecrets.com');
+          ga('send', 'pageview');
+        </script>
+
+        <!-- last generated: 2013-05-31 09:51:24 +0100 -->
+    </body>
+</html>

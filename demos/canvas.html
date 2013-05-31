@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head> 
+        <meta charset="utf-8" />
+        
+        <title>Secrets of the Browser Developer Tools - Demos</title>
+
+        <!-- chrome frame support -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <!-- DNS prefetch -->
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//themes.googleusercontent.com" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        
+        <!-- fix orientation bugs -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="shortcut icon" href="favicon.ico" />
+
+        <!-- search meta tags -->
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+
+        <!-- open graph meta tags -->
+        <meta property="og:title" content="Secrets of the Browser Developer Tools" />
+        <meta property="og:type" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:description" content="" />
+
+        <!-- styles -->
+        <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic|Source+Code+Pro:300" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/styles.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Modernizr - all other JS are loaded at bottom of page -->
+        <!--script src="/js/modernizr.min.js"></script -->
+
+    </head>
+    <body>
+
+        <div class="site-wrapper">
+            <h1>Canvas Demo</h1>
+
+
+<p><canvas id="test-canvas" width="400" height="400"></canvas></p>
+
+<script>
+
+    window.requestAnimFrame = (function(){
+      return  window.requestAnimationFrame       ||
+              window.webkitRequestAnimationFrame ||
+              window.mozRequestAnimationFrame    ||
+              function( callback ){
+                window.setTimeout(callback, 1000 / 60);
+              };
+    })();
+
+    var demo = (function() {
+
+        var canvas = document.getElementById('test-canvas');
+        var context = canvas.getContext('2d');
+        var hue = 0;
+        var points = [{
+                "x": 150,
+                "y": 10,
+                "xDirection": false,
+                "yDirection": false
+            },{
+                "x": 290,
+                "y": 290,
+                "xDirection": true,
+                "yDirection": false
+            },{
+                "x": 10,
+                "y": 280,
+                "xDirection": true,
+                "yDirection": true
+            }];
+
+        function randomNumber(min, max) {
+            return (Math.random() * (max - min)) + min;
+        }
+
+        function alterCoords(point) {
+            var MIN = 0,
+                MAX = 10;
+
+            if ((point.x <= MAX && !point.xDirection) || (point.x >= (canvas.width - MAX) && point.xDirection)) {
+                point.xDirection = !point.xDirection;
+            }
+
+            if ((point.y <= MAX && !point.yDirection) || (point.y >= (canvas.height - MAX) && point.yDirection)) {
+                point.yDirection = !point.yDirection;
+            }
+
+            point.x += (point.xDirection) ? randomNumber(MIN,MAX) : randomNumber(-MIN, -MAX);
+            point.y += (point.yDirection) ? randomNumber(MIN,MAX) : randomNumber(-MIN, -MAX);
+        }
+
+        function alterHue() {
+            hue++;
+
+            if (hue === 360) {
+                hue = 0;
+            }
+        }
+
+        function draw() {
+            var i = 0,
+                l = points.length;
+
+            requestAnimFrame(draw);
+
+            context.strokeStyle = 'hsl(' + hue + ', 50%, 50%)';
+
+            context.fillRect(0,0,canvas.width, canvas.height);
+            context.beginPath();
+            context.moveTo(points[0].x, points[0].y);
+            for (i=1;i<l;i++) {
+                context.lineTo(points[i].x, points[i].y);
+            }
+            context.lineTo(points[0].x, points[0].y);
+            context.stroke();
+            context.closePath();
+
+            for (i=0;i<l;i++) {
+                alterCoords(points[i]);
+            }
+
+            alterHue();
+        }
+
+        return {
+            init: function() {
+                context.fillStyle = 'rgba(255,255,255,0.8)';
+                draw();
+            }
+        };
+
+    }());
+
+    demo.init();
+
+</script>
+
+
+        </div>
+
+        <!-- &copy; 2013 Andi Smith -->
+
+        <!-- scripts -->
+        <script src="assets/js/lib/jquery-1.10.1.min.js"></script>
+        <script src="assets/js/common.min.js"></script>
+
+        <!-- Google Analytics -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-534640-11', 'devtoolsecrets.com');
+          ga('send', 'pageview');
+        </script>
+
+        <!-- last generated: 2013-05-31 09:51:24 +0100 -->
+    </body>
+</html>

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head> 
+        <meta charset="utf-8" />
+        
+        <title>Secrets of the Browser Developer Tools - Secrets</title>
+
+        <!-- chrome frame support -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <!-- DNS prefetch -->
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//themes.googleusercontent.com" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        
+        <!-- fix orientation bugs -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="shortcut icon" href="favicon.ico" />
+
+        <!-- search meta tags -->
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+
+        <!-- open graph meta tags -->
+        <meta property="og:title" content="Secrets of the Browser Developer Tools" />
+        <meta property="og:type" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:description" content="" />
+
+        <!-- styles -->
+        <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic|Source+Code+Pro:300" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/styles.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Modernizr - all other JS are loaded at bottom of page -->
+        <!--script src="/js/modernizr.min.js"></script -->
+
+    </head>
+    <body>
+
+        <div class="site-wrapper">
+                        <header class="site-header" id="top">
+                <h1 class="site-logo"><a href="/">Secrets of the Browser Developer Tools</a></h1>
+            </header>
+
+            <div class="content-wrapper">
+                <section class="site-content ">
+                    <nav class="site-nav">
+                        <ul>
+                            <li><a href="/"  class="selected">secrets</a></li>
+                            <li><a href="/about" >about</a></li>
+                            <li><a href="/contribute" >contribute</a></li>
+                            <li class="top"><a href="#top"><span>Back to Top</span></a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="page-content">
+
+                        <h1 class="hidden">Secrets</h1>
+
+<p>Welcome! This site is currently in BETA!</p>
+<p>Over the coming days, weeks and months look out for new secrets and site features.</p>
+
+<div class="hero un">
+    <ul>
+        <li class="filters">
+            <div href="#" class="config-1">
+                <p>Filter Secrets By...</h1>
+                <ul class="selections type-selections">
+                    <li class="item">
+                        <h2 class="meta type-general"><label for="general">General</label></h2>
+                        <p>General hints and tips that don't fall in to any category.</p>
+                        <input type="checkbox" id="general" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta type-console"><label for="console">Console</label></h2>
+                        <p>Improve your console skills to find out more about your site or app.</p>
+                        <input type="checkbox" id="console" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta type-inspecting"><label for="inspecting">Inspecting</label></h2>
+                        <p>Inspect and make changes to page HTML and CSS.</p>
+                        <input type="checkbox" id="inspecting" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta type-editing"><label for="editing">Editing</label></h2>
+                        <p>General hints and tips that don't fall in to any category.</p>
+                        <input type="checkbox" id="editing" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta type-debugging"><label for="debugging">Debugging</label></h2>
+                        <p>Place breakpoints and watches to help you debug code as it runs.</p>
+                        <input type="checkbox" id="debugging" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta type-performance"><label for="performance">Performance</label></h2>
+                        <p>Improve the way your site or app performs with these secrets.</p>
+                        <input type="checkbox" id="performance" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta type-storage"><label for="storage">Storage</label></h2>
+                        <p>Find out what is in memory from your application.</p>
+                        <input type="checkbox" id="storage" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta type-mobile"><label for="mobile">Mobile</label></h2>
+                        <p>How to debug your sites on mobile and tablet devices.</p>
+                        <input type="checkbox" id="mobile" value="true" checked="checked" />
+                    </li>
+                </ul>
+                <p>In These Browsers...</p>
+                <ul class="selections browser-selections">
+                    <li class="item">
+                        <h2 class="meta browser-chrome"><label for="chrome">Chrome</label></h2>
+                        <p>Secrets for Chrome Chrome &amp; Canary.</p>
+                        <input type="checkbox" id="chrome" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta browser-firebug"><label for="firebug">Firebug</label></h2>
+                        <p>Secrets for Firefox's Firebug Plugin.</p>
+                        <input type="checkbox" id="firebug" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta browser-firefox"><label for="firefox">Firefox</label></h2>
+                        <p>Secrets for Firefox &amp; Firefox Aurora.</p>
+                        <input type="checkbox" id="firefox" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta browser-IE"><label for="internet-explorer">Internet Explorer</label></h2>
+                        <p>Secrets for Internet Explorer.</p>
+                        <input type="checkbox" id="internet-explorer" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta browser-opera"><label for="opera">Opera</label></h2>
+                        <p>Secrets for Opera.</p>
+                        <input type="checkbox" id="opera" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta browser-safari"><label for="safari">Safari</label></h2>
+                        <p>Secrets for Safari &amp; Webkit Nightly.</p>
+                        <input type="checkbox" id="safari" value="true" checked="checked" />
+                    </li>
+                </ul>
+
+                <div class="selections">
+                    <div class="item favorite-selection">
+                        <h2 class="meta icon-favorite">Only Show My Favorites</h2>
+                        <p>Secrets you've marked as favorites.</p>
+                    </div>
+
+                    <p class="loading-favorites">Loading Favorites...</p>
+                    <p class="no-favorites">You currently do not have any secrets marked as favorites.</p>
+                </div>
+
+                <p class="secret-count">Displaying <span>0</span> secrets</p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="controller chrome firefox internet-explorer opera safari">
+
+
+
+    
+        
+            
+            
+    <section>
+        <h2>General</h2>
+        
+        <article class="post small"
+                 data-url="/secret/general-finding-the-development-tools.html"
+                 data-browsers="chrome firefox internet-explorer opera safari"
+                 data-categories="general">
+            <header class="post-header">
+                <h3><a href="/secret/general-finding-the-development-tools.html">Finding the Developer Tools</a></h3>
+            </header>
+
+            <div class="post-content type-general">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/general-use-the-latest-developer-release.html"
+                 data-browsers="chrome firefox safari"
+                 data-categories="general">
+            <header class="post-header">
+                <h3><a href="/secret/general-use-the-latest-developer-release.html">Use the Latest Developer Release</a></h3>
+            </header>
+
+            <div class="post-content type-general">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/general-undocking-and-moving-the-developer-tools.html"
+                 data-browsers="chrome firefox safari"
+                 data-categories="general">
+            <header class="post-header">
+                <h3><a href="/secret/general-undocking-and-moving-the-developer-tools.html">Undock and Move the Developer Tools</a></h3>
+            </header>
+
+            <div class="post-content type-general">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/general-learn-the-keyboard-shortcuts.html"
+                 data-browsers="chrome internet-explorer opera"
+                 data-categories="general">
+            <header class="post-header">
+                <h3><a href="/secret/general-learn-the-keyboard-shortcuts.html">Learn the Keyboard Shortcuts</a></h3>
+            </header>
+
+            <div class="post-content type-general">
+            </div>
+        </article>
+    
+
+    
+        
+            
+    </section>
+            
+            
+    <section>
+        <h2>Console</h2>
+        
+        <article class="post small"
+                 data-url="/secret/console-log-info-warn-error.html"
+                 data-browsers="chrome firebug firefox internet-explorer opera safari"
+                 data-categories="console">
+            <header class="post-header">
+                <h3><a href="/secret/console-log-info-warn-error.html">Log, Info, Debug, Warn, Error</a></h3>
+            </header>
+
+            <div class="post-content type-console">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/console-assert.html"
+                 data-browsers="chrome firebug internet-explorer opera safari"
+                 data-categories="console">
+            <header class="post-header">
+                <h3><a href="/secret/console-assert.html">Assert</a></h3>
+            </header>
+
+            <div class="post-content type-console">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/console-rerun-command.html"
+                 data-browsers="chrome firebug firefox internet-explorer opera safari"
+                 data-categories="console">
+            <header class="post-header">
+                <h3><a href="/secret/console-rerun-command.html">Re-run Command</a></h3>
+            </header>
+
+            <div class="post-content type-console">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/console-open-the-console-from-any-tab.html"
+                 data-browsers="chrome safari"
+                 data-categories="console">
+            <header class="post-header">
+                <h3><a href="/secret/console-open-the-console-from-any-tab.html">Open The Console From Any Tab</a></h3>
+            </header>
+
+            <div class="post-content type-console">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/console-referencing-the-current-and-previous-element.html"
+                 data-browsers="chrome firebug firefox opera safari"
+                 data-categories="console">
+            <header class="post-header">
+                <h3><a href="/secret/console-referencing-the-current-and-previous-element.html">Referencing the Current and Previous Element</a></h3>
+            </header>
+
+            <div class="post-content type-console">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/console-last-evaluated-expression.html"
+                 data-browsers="chrome safari"
+                 data-categories="console">
+            <header class="post-header">
+                <h3><a href="/secret/console-last-evaluated-expression.html">Last Evaluated Expression</a></h3>
+            </header>
+
+            <div class="post-content type-console">
+            </div>
+        </article>
+    
+
+    
+
+    
+        
+            
+    </section>
+            
+            
+    <section>
+        <h2>Inspecting</h2>
+        
+        <article class="post small"
+                 data-url="/secret/inspect-inspect-fonts.html"
+                 data-browsers="firefox"
+                 data-categories="inspecting">
+            <header class="post-header">
+                <h3><a href="/secret/inspect-inspect-fonts.html">Inspect Fonts</a></h3>
+            </header>
+
+            <div class="post-content type-inspecting">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/inspect-viewing-your-site-as-responsive.html"
+                 data-browsers="chrome firefox"
+                 data-categories="inspecting">
+            <header class="post-header">
+                <h3><a href="/secret/inspect-viewing-your-site-as-responsive.html">Viewing Your Site as Responsive</a></h3>
+            </header>
+
+            <div class="post-content type-inspecting">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/inspect-viewing-your-site-in-3d.html"
+                 data-browsers="firefox"
+                 data-categories="inspecting">
+            <header class="post-header">
+                <h3><a href="/secret/inspect-viewing-your-site-in-3d.html">Viewing Your Site in 3D</a></h3>
+            </header>
+
+            <div class="post-content type-inspecting">
+            </div>
+        </article>
+    
+
+    
+        
+            
+    </section>
+            
+            
+    <section>
+        <h2>Editing</h2>
+        
+        <article class="post small"
+                 data-url="/secret/editing-incrementing-css-values.html"
+                 data-browsers="chrome firefox internet-explorer opera safari"
+                 data-categories="editing">
+            <header class="post-header">
+                <h3><a href="/secret/editing-incrementing-css-values.html">Incrementing CSS Values</a></h3>
+            </header>
+
+            <div class="post-content type-editing">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/editing-styling-active-hover-focus-visited-states.html"
+                 data-browsers="chrome firebug firefox opera safari"
+                 data-categories="editing">
+            <header class="post-header">
+                <h3><a href="/secret/editing-styling-active-hover-focus-visited-states.html">Styling :active, :hover, :focus, :visited States</a></h3>
+            </header>
+
+            <div class="post-content type-editing">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/editing-drag-and-drop-to-rearrange-elements.html"
+                 data-browsers="chrome safari"
+                 data-categories="editing">
+            <header class="post-header">
+                <h3><a href="/secret/editing-drag-and-drop-to-rearrange-elements.html">Drag and Drop to Rearrange Elements</a></h3>
+            </header>
+
+            <div class="post-content type-editing">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/editing-use-sass-source-maps.html"
+                 data-browsers="chrome"
+                 data-categories="editing">
+            <header class="post-header">
+                <h3><a href="/secret/editing-use-sass-source-maps.html">Use SASS Source Maps</a></h3>
+            </header>
+
+            <div class="post-content type-editing">
+            </div>
+        </article>
+    
+
+    
+        
+            
+    </section>
+            
+            
+    <section>
+        <h2>Debugging</h2>
+        
+        <article class="post small"
+                 data-url="/secret/debugging-debugging-with-debugger.html"
+                 data-browsers="chrome firebug firefox internet-explorer opera safari"
+                 data-categories="debugging">
+            <header class="post-header">
+                <h3><a href="/secret/debugging-debugging-with-debugger.html">Debugging With debugger;</a></h3>
+            </header>
+
+            <div class="post-content type-debugging">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/debugging-conditional-breakpoints.html"
+                 data-browsers="chrome firebug firefox internet-explorer opera safari"
+                 data-categories="debugging">
+            <header class="post-header">
+                <h3><a href="/secret/debugging-conditional-breakpoints.html">Conditional Breakpoints</a></h3>
+            </header>
+
+            <div class="post-content type-debugging">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/debugging-dom-breakpoints.html"
+                 data-browsers="chrome firebug"
+                 data-categories="debugging">
+            <header class="post-header">
+                <h3><a href="/secret/debugging-dom-breakpoints.html">DOM Breakpoints</a></h3>
+            </header>
+
+            <div class="post-content type-debugging">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/debugging-xhr-breakpoints.html"
+                 data-browsers="chrome"
+                 data-categories="debugging">
+            <header class="post-header">
+                <h3><a href="/secret/debugging-xhr-breakpoints.html">XHR Breakpoints</a></h3>
+            </header>
+
+            <div class="post-content type-debugging">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/debugging-watching-values.html"
+                 data-browsers="chrome firefox internet-explorer opera safari"
+                 data-categories="debugging">
+            <header class="post-header">
+                <h3><a href="/secret/debugging-watching-values.html">Watching Values</a></h3>
+            </header>
+
+            <div class="post-content type-debugging">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/debugging-debugging-minified-javascript.html"
+                 data-browsers="chrome firefox internet-explorer opera safari"
+                 data-categories="debugging">
+            <header class="post-header">
+                <h3><a href="/secret/debugging-debugging-minified-javascript.html">Debugging Minified JavaScript</a></h3>
+            </header>
+
+            <div class="post-content type-debugging">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/debugging-emulate-a-user-agent.html"
+                 data-browsers="chrome opera safari"
+                 data-categories="debugging">
+            <header class="post-header">
+                <h3><a href="/secret/debugging-emulate-a-user-agent.html">Emulate a User Agent</a></h3>
+            </header>
+
+            <div class="post-content type-debugging">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/debugging-emulate-a-touch-device.html"
+                 data-browsers="chrome"
+                 data-categories="debugging">
+            <header class="post-header">
+                <h3><a href="/secret/debugging-emulate-a-touch-device.html">Emulate a Touch Device</a></h3>
+            </header>
+
+            <div class="post-content type-debugging">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/debugging-override-geolocation.html"
+                 data-browsers="chrome"
+                 data-categories="debugging">
+            <header class="post-header">
+                <h3><a href="/secret/debugging-override-geolocation.html">Override Geolocation</a></h3>
+            </header>
+
+            <div class="post-content type-debugging">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/debugging-override-device-orientation.html"
+                 data-browsers="chrome"
+                 data-categories="debugging">
+            <header class="post-header">
+                <h3><a href="/secret/debugging-override-device-orientation.html">Override Device Orientation</a></h3>
+            </header>
+
+            <div class="post-content type-debugging">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/debugging-a-canvas-element.html"
+                 data-browsers="chrome"
+                 data-categories="debugging performance">
+            <header class="post-header">
+                <h3><a href="/secret/debugging-a-canvas-element.html">Debugging a Canvas Element</a></h3>
+            </header>
+
+            <div class="post-content type-debugging">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/debugging-running-code-snippets.html"
+                 data-browsers="chrome"
+                 data-categories="debugging">
+            <header class="post-header">
+                <h3><a href="/secret/debugging-running-code-snippets.html">Running Code Snippets</a></h3>
+            </header>
+
+            <div class="post-content type-debugging">
+            </div>
+        </article>
+    
+
+    
+        
+            
+    </section>
+            
+            
+    <section>
+        <h2>Performance</h2>
+        
+        <article class="post small"
+                 data-url="/secret/performance-disable-the-browser-cache.html"
+                 data-browsers="chrome firefox internet-explorer opera safari"
+                 data-categories="performance">
+            <header class="post-header">
+                <h3><a href="/secret/performance-disable-the-browser-cache.html">Disable the Browser Cache</a></h3>
+            </header>
+
+            <div class="post-content type-performance">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/performance-checking-domcontentloaded-and-loadevent.html"
+                 data-browsers="chrome safari"
+                 data-categories="performance">
+            <header class="post-header">
+                <h3><a href="/secret/performance-checking-domcontentloaded-and-loadevent.html">Checking DOMContentLoad and Load Event</a></h3>
+            </header>
+
+            <div class="post-content type-performance">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/performance-sort-the-network-timeline.html"
+                 data-browsers="chrome firefox internet-explorer safari"
+                 data-categories="performance">
+            <header class="post-header">
+                <h3><a href="/secret/performance-sort-the-network-timeline.html">Sort Network Requests to Find Bottlenecks</a></h3>
+            </header>
+
+            <div class="post-content type-performance">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/performance-export-the-network-timeline-as-har.html"
+                 data-browsers="chrome"
+                 data-categories="performance">
+            <header class="post-header">
+                <h3><a href="/secret/performance-export-the-network-timeline-as-har.html">Export the Network Timeline as HAR File</a></h3>
+            </header>
+
+            <div class="post-content type-performance">
+            </div>
+        </article>
+    
+
+    
+        
+        <article class="post small"
+                 data-url="/secret/performance-replay-a-xhr-network-request.html"
+                 data-browsers="chrome"
+                 data-categories="performance">
+            <header class="post-header">
+                <h3><a href="/secret/performance-replay-a-xhr-network-request.html">Replay a XHR Network Request</a></h3>
+            </header>
+
+            <div class="post-content type-performance">
+            </div>
+        </article>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    </section>
+
+</div>
+
+                    </div>
+
+                </section>
+
+                
+                <aside class="site-sidebar">
+
+                    <section class="event">
+
+    <h1>Events</h1>
+    <div class="hero un">
+        <ul>
+            <li>
+                <a href="http://www.andismith.com/contact/" class="whole-button config-2">
+                    <p>I'd love to talk<br/>at your event!<span class="cta">Contact me!</span></p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</section>
+
+                    <section class="about">
+
+    <p>Get the most of your developer tools in Chrome, Firebug, Firefox, Internet Explorer, Opera and Safari.</p>
+
+    <p>With <a href="http://www.twitter.com/andismith/" target="_blank">Andi Smith</a>, a Presentation Technical Architect in London, England.</p>
+
+</section>
+                
+                    <section>
+    <h1>Stay Social</h1>
+    <ul class="social">
+        
+        
+        <li class="twitter">
+            <p><a href="https://twitter.com/intent/follow?screen_name=devtoolsecrets" class="icon-twitter" target="_blank">Follow Us</a></p>
+        </li>
+        
+        
+        
+        
+        <li class="github">
+            <p><a href="https://github.com/andismith/dev-tool-secrets" target="_blank" class="icon-github"><span>Contribute</span></a></p>
+        </li>
+        
+        
+        
+        <li class="contact">
+            <p><a href="http://www.andismith.com/contact" target="_blank" class="icon-envelop"><span>Contact</span></a></p>
+        </li>
+    </ul>
+</section>
+
+                    <h1>Latest News</h1>
+                    <ul class="list">
+                    
+                        <li>
+                            <p><a href="/news/welcome">Welcome</a></p>
+                        </li>
+                    
+                    </ul>
+
+                </aside>
+                
+            </div>
+
+        </div>
+
+        <!-- &copy; 2013 Andi Smith -->
+
+        <!-- scripts -->
+        <script src="assets/js/lib/jquery-1.10.1.min.js"></script>
+        <script src="assets/js/common.min.js"></script>
+
+        <!-- Google Analytics -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-534640-11', 'devtoolsecrets.com');
+          ga('send', 'pageview');
+        </script>
+
+        <!-- last generated: 2013-05-31 09:51:24 +0100 -->
+    </body>
+</html>

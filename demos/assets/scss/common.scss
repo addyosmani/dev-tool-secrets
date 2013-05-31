@@ -1,0 +1,41 @@
+$primary: #3a4c7a;
+$secondary: #eee;
+
+$sitebackground: $primary;
+$pagebackground: #fff;
+$text: #333;
+$link: #4c70cd;
+$button: #000;
+
+body {
+    background: $sitebackground;
+    color: $text;
+    font: 300 100%/1.5 arial, sans-serif;
+}
+
+h1 {
+    color: $primary;
+}
+
+a {
+    color: $link;
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+.site-wrapper {
+    background: $pagebackground;
+    max-width: 600px;
+    padding: 0 10px 10px;
+}
+
+.button {
+    background: $secondary;
+    border-radius: 8px;
+    color: $button;
+    display: inline-block;
+    padding: 5px;
+}
